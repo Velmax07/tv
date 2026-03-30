@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; media-src * blob: data:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>TV Hub Premium</title>
 
@@ -286,19 +287,9 @@
         // ============================================================
         // BLOQUEIO PC
         // ============================================================
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        if (!isMobile) {
-            document.getElementById('pc-block-screen').style.display = 'flex';
-            document.querySelector('.player-section').style.display = 'none';
-        }
+        // Bloqueio PC desativado
 
-        // Bloqueio de teclas
-        document.addEventListener('keydown', function(e) {
-            if(e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || (e.ctrlKey && e.keyCode == 85)) {
-                e.preventDefault(); return false;
-            }
-        });
-        document.addEventListener('contextmenu', e => e.preventDefault());
+        // Bloqueio de teclas desativado
 
         // ============================================================
         // PLAYER HLS
